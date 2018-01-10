@@ -53,10 +53,7 @@ def glog_library(namespace='google', with_gflags=1):
             '-Wno-unused-function',
             '-Wno-unused-local-typedefs',
             '-Wno-unused-variable',
-            # Inject a C++ namespace.
-            "-D_START_GOOGLE_NAMESPACE_='namespace %s {'" % namespace,
-            "-D_END_GOOGLE_NAMESPACE_='}'",
-            "-DGOOGLE_NAMESPACE='%s'" % namespace,
+            '-DDEFAULT_GOOGLE_NAMESPACE',
             # Allows src/base/mutex.h to include pthread.h.
             '-DHAVE_PTHREAD',
             # Allows src/logging.cc to determine the host name.

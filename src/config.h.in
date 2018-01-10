@@ -173,8 +173,14 @@
 /* Version number of package */
 #undef VERSION
 
+#ifdef DEFAULT_GOOGLE_NAMESPACE
+#define _START_GOOGLE_NAMESPACE_ namespace google {
+#define _END_GOOGLE_NAMESPACE_ }
+#define GOOGLE_NAMESPACE google
+#else
 /* Stops putting the code inside the Google namespace */
 #undef _END_GOOGLE_NAMESPACE_
 
 /* Puts following code inside the Google namespace */
 #undef _START_GOOGLE_NAMESPACE_
+#endif
